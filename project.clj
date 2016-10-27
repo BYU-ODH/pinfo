@@ -1,6 +1,6 @@
-(defproject pinfo "0.1.0"
-  :description "Utilize BYU basic oauth2 for the preliminary information needed to get netid and personid"
-  :url "http://example.com/FIXME"
+(defproject byu-odh/pinfo "0.1.0"
+  :description "service to return BYU preliminary ws info for a user"
+  :url "https://github.com/BYU-ODH/pinfo"
   :min-lein-version "2.0.0"
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [compojure "1.5.1"]

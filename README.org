@@ -1,0 +1,29 @@
+* PInfo
+A simple service to utilize BYU's web services to return personid, netid, and a few other sundry pieces of information that can be used to get information necessary for more advanced API requests. 
+
+** Prerequisites
+You will need [[https://github.com/technomancy/leiningen][Leiningen]] 2.0.0 or above installed.
+
+Prior to deploying you will need to modify =src/pinfo/sample-config.clj= to a matching =config.clj= in order to run, including the information for your application authorization you've received from https://api.byu.edu/store .
+
+** Running
+To start a web server for the application from the codebase, run:
+#+BEGIN_SRC 
+    lein ring server
+#+END_SRC
+
+** Deployment
+_TODO_ Deploying to Wildfly is accomplished by producing an immutant war and then dropping it into the appropriate standalone directory of your Wildfly server. 
+
+** License
+
+Copyright © BYU Office of Digital Humanities, 2016
+
+Author: Tory Anderson mail@toryanderson.com
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/.
+
