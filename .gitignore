@@ -11,3 +11,4 @@ pom.xml.asc
 /src/pinfo/config.clj
 */config.clj
 config.clj
+/logs/partyline.log

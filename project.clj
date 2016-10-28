@@ -8,6 +8,7 @@
                  [compojure "1.5.1"]
                  [org.clojure/tools.logging "0.3.1"]
                  [org.apache.logging.log4j/log4j-core "2.7"]
+                 [org.apache.logging.log4j/log4j-slf4j-impl "2.7"] ;; TODO learn how to use this better
                  [ring/ring-defaults "0.2.1"]
                  [ring-middleware-format "0.7.0"]
                  ;[org.immutant/web "2.1.0"]
