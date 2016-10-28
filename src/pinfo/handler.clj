@@ -13,5 +13,4 @@
   (route/not-found "Not Found"))
 
 (def app
-  (middleware/wrap-base #'app-routes ;; syntax on this, since app-routes is here defroutes?
-   ))
+  (middleware/wrap-base #'app-routes))
