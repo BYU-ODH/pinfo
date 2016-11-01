@@ -13,7 +13,11 @@ To start a web server for the application from the codebase, run:
 #+END_SRC
 
 ** Deployment
-_TODO_ Deploying to Wildfly is accomplished by producing an immutant war and then dropping it into the appropriate standalone directory of your Wildfly server. 
+Deploying to Wildfly is accomplished by producing an immutant war and then dropping it into the appropriate standalone directory of your Wildfly server. 
+
+#+BEGIN_SRC shell
+lein immutant war; scp target/pinfo.war user@server:<wildfly-deployment-path>
+#+END_SRC
 
 ** License
 
