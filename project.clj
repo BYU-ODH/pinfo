@@ -11,13 +11,13 @@
                  [org.apache.logging.log4j/log4j-slf4j-impl "2.7"] ;; TODO learn how to use this better
                  [ring/ring-defaults "0.2.1"]
                  [ring-middleware-format "0.7.0"]
-                 ;[org.immutant/web "2.1.0"]
+                 [org.immutant/web "2.1.5"]
                  [ring-server "0.4.0"]
                  [ring-cors "0.1.8"]
                  [ring/ring-json "0.4.0"]
                  [byu-odh/byu-ws "0.1.1"]]
   :plugins [[lein-ring "0.9.7"]
-            ;[lein-immutant "2.1.0"]
+            [lein-immutant "2.1.0"]
             ]
   :ring {:handler pinfo.handler/app}
   :immutant {:war {:name "pid"

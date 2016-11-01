@@ -12,21 +12,12 @@
   (let [api-address (oauth/authkey-GET-url
                      (-> env :client-id)
                      (-> env :site-url))]
-    (println "API ADDRESS" api-address)
     (fn [req]
-      (println "--- In wrap-byu-api-call ---")
-      (println req)
       (if (get-in req [:session :byu-api-auth-code]) 
-        (do
-          (println "--------- Request has the right session info")
-          (handler req))
+        (handler req)
         (if-let [code (get-in req [:params :code])]
-          (do
-            (println "--------- Request has the code in the url")
-            (handler (assoc-in req [:session :byu-api-auth-code] code)))
-          (do
-            (println "--------- Request has neither url or session code")
-            (redirect api-address)))))))
+          (handler (assoc-in req [:session :byu-api-auth-code] code))
+          (redirect api-address))))))
 
 (defn wrap-base [handler]
   (-> handler
@@ -34,8 +25,7 @@
       wrap-byu-api-call
       (wrap-cors :access-control-allow-origin [#".*"]
                  :access-control-allow-methods [:get :put :post :delete])
-      ;(json/wrap-json-body {:keywords? true :bigdecimals? true})
-      json/wrap-json-response     ;;http://stackoverflow.com/questions/32322110/compojure-ring-json-not-returning-json 
+      json/wrap-json-response
       (wrap-defaults
         (-> site-defaults
             (assoc-in [:security :anti-forgery] false)

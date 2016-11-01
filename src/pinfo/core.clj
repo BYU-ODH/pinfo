@@ -6,6 +6,5 @@
   (:gen-class))
 
 (defn -main [& args]
-  (serve handler/app {:port (or (env :port)
-                                3000)}))
+  (serve handler/app {:open-browser? false}))
 
